@@ -1,7 +1,12 @@
 # CreativeTemplate
 These are the DFP creatives that anyone can use and create awesome ads for their website
 
-Creative template.txt is file that has running creatives that you can use to modify or use directly on the website.Other file are DFP (Google Ad Manager) compatible only. You will have to go in your DFP>Creatives>Creative Template> New Template> Import the files to work.
+In the above ad bundle creative template.txt is file that has running creatives that you can use to modify or use directly on the website.Other file are DFP (Google Ad Manager) compatible only. You will have to go in your DFP>Creatives>Creative Template> New Template> Import the files to work.
+
+IMPORTANT :- RUN THE CREATIVE ON ONLINE CODE EDITOR BEFORE USING THEM 
+Step1- Download creative template.txt 
+Step2- open https://www.w3schools.com/tryit/
+Step3- Paste each creative one by one on the editor. 
 
 Usage Directions :-
 1. Interstital Ad with delay -
