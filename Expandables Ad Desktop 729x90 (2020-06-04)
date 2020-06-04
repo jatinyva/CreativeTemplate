@@ -1,0 +1,65 @@
+{
+  "name": "Expandables Ad Desktop 729x90",
+  "description": "This is an DESKTOP expandable tag use 728x90 ",
+  "variables": [
+    {
+      "defaultValue": -40,
+      "sampleValue": 0,
+      "label": "Button Placement",
+      "uniqueName": "ButtonPlacement",
+      "description": "Alignment of the button default value is -40 (minus 40)",
+      "isRequired": true,
+      "variableType": "LONG"
+    },
+    {
+      "defaultValue": "red",
+      "label": "ButtonColor",
+      "uniqueName": "ButtonColor",
+      "description": "The Expand button color",
+      "isRequired": true,
+      "variableType": "STRING"
+    },
+    {
+      "mimeTypes": [
+        "GIF",
+        "PNG",
+        "JPG"
+      ],
+      "label": "Upload(728x90)",
+      "uniqueName": "Upload728x90",
+      "description": "",
+      "isRequired": true,
+      "variableType": "ASSET"
+    },
+    {
+      "label": "ExpandedBoxCreative",
+      "uniqueName": "ExpandedBoxCreative",
+      "description": "max height 350px",
+      "isRequired": true,
+      "variableType": "STRING"
+    },
+    {
+      "defaultValue": "Expand",
+      "label": "ButtonText",
+      "uniqueName": "ButtonText",
+      "description": "ButtonText",
+      "isRequired": true,
+      "variableType": "STRING"
+    },
+    {
+      "defaultValue": "#00FFCB",
+      "label": "Ringcolor",
+      "uniqueName": "Ringcolor",
+      "description": "",
+      "isRequired": true,
+      "variableType": "STRING"
+    }
+  ],
+  "formatter": "\u003cscript src\u003d\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"\u003e\u003c/script\u003e\n\u003cstyle\u003e\n.content {\npadding: 0 18px;\nmax-height: 0;\noverflow: hidden;\ntransition: max-height 0.2s ease-out;\nbackground-color: black;\n}\n\n.container {\nposition: fixed;\n}\n\n.container .btn {\nposition: absolute;\ntop: 45px;\nright: [%ButtonPlacement%]px;\ntransform: translate(-50%, -50%);\n-ms-transform: translate(-50%, -50%);\nbackground-color: [%ButtonColor%];\ncolor: white;\nfont-size: 16px;\nborder: none;\ncursor: pointer;\nborder-radius: 45px;\ntext-align: center;\npadding: 15px 22px;\n}\n\n.container .btn:hover {\nbackground-color: [%ButtonColor%];\n}\n\n  button::after {\n  content: \u0027\u0027;\n  width: 30px; height: 30px;\n  border-radius: 100%;\n  border: 6px solid [%Ringcolor%];\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  animation: ring 1.5s infinite;\n  animation-iteration-count: 3;\n  z-index: -1;\n  animation-fill-mode: forwards;\n}\n\n\n@keyframes ring {\n  0% {\n    width: 15px;\n    height: 15px;\n    opacity: 1;\n  }\n  100% {\n    width: 150px;\n    height: 150px;\n    opacity: 0;\n  }\n}  \n  \n\u003c/style\u003e\n\u003cdiv class\u003d\"container\" style\u003d\"width:728px; height:90px;\"\u003e \u003cimg src\u003d\"[%Upload728x90%]\" style\u003d\"width:728px; height:90px;\"\u003e\u003cbutton class\u003d\"btn\" id\u003d\"togle\"\u003e[%ButtonText%]\u003c/button\u003e\n\n\u003cdiv class\u003d\"content\"\u003e [%ExpandedBoxCreative%]\u003c/div\u003e\n\u003c/div\u003e\n\u003cscript\u003e\nvar coll \u003d document.getElementsByClassName(\"btn\");\nvar i;\nfor (i \u003d 0; i \u003c coll.length; i++) {\ncoll[i].addEventListener(\"click\", function() {\nthis.classList.toggle(\"active\");\nvar content \u003d this.nextElementSibling;\nif (content.style.maxHeight) {\ncontent.style.maxHeight \u003d null;\n} else {\ncontent.style.maxHeight \u003d content.scrollHeight + \"px\";\n}\n});\n}\n\u003c/script\u003e\n\u003cscript\u003e\nvar action \u003d 1;\n\n$(\"#togle\").on(\"click\", viewSomething);\n\nfunction viewSomething() {\nif ( action \u003d\u003d 1 ) {\nwindow.parent.document.getElementById(window.name).style.cssText \u003d \"width: 750px; height: 500px;\";\naction \u003d 2;\n} else {\nwindow.parent.document.getElementById(window.name).style.cssText \u003d \"width: 728px; height: 150px;\";\naction \u003d 1;\n}\n}\n\u003c/script\u003e",
+  "omidPartnerName": "",
+  "type": "USER_DEFINED",
+  "isInterstitial": false,
+  "isNativeEligible": false,
+  "isNativeVideoEligible": false,
+  "isSafeFrameCompatible": false
+}

@@ -1,0 +1,96 @@
+{
+  "name": "Mobile_Expanables_300x250_TO_Desire_size",
+  "description": "You can change everything in the creative",
+  "variables": [
+    {
+      "defaultValue": "red",
+      "sampleValue": "red",
+      "label": "button_background_color",
+      "uniqueName": "button_background_color",
+      "description": "color of the expand button",
+      "isRequired": true,
+      "variableType": "STRING"
+    },
+    {
+      "defaultValue": "blue",
+      "label": "RingColor",
+      "uniqueName": "RingColor",
+      "description": "Color of the ring on the expand",
+      "isRequired": true,
+      "variableType": "STRING"
+    },
+    {
+      "defaultValue": "Expand",
+      "label": "Button_text",
+      "uniqueName": "Button_text",
+      "description": "Text on the button ",
+      "isRequired": true,
+      "variableType": "STRING"
+    },
+    {
+      "isTrackingUrl": false,
+      "urlType": "STANDARD_HTTP",
+      "label": "Clickthrough_url_300x250",
+      "uniqueName": "Clickthrough_url_300x250",
+      "description": "URL where you want to send your user if they click the banner",
+      "isRequired": true,
+      "variableType": "URL"
+    },
+    {
+      "mimeTypes": [
+        "JPG",
+        "GIF",
+        "PNG"
+      ],
+      "label": "300x250_image",
+      "uniqueName": "300x250_image",
+      "description": "uplaod the image of 300x250 here",
+      "isRequired": true,
+      "variableType": "ASSET"
+    },
+    {
+      "defaultValue": "320",
+      "label": "Expanding_width",
+      "uniqueName": "Expanding_width",
+      "description": "Enter the expansion width on mobile do not exceed 320 ",
+      "isRequired": true,
+      "variableType": "STRING"
+    },
+    {
+      "defaultValue": "480",
+      "label": "Expanding_height",
+      "uniqueName": "Expanding_height",
+      "description": "enter the height you need for expansion",
+      "isRequired": true,
+      "variableType": "STRING"
+    },
+    {
+      "isTrackingUrl": false,
+      "urlType": "STANDARD_HTTP",
+      "label": "Clickthrough_url_after_expansion",
+      "uniqueName": "Clickthrough_url_after_expansion",
+      "description": "URL ",
+      "isRequired": true,
+      "variableType": "URL"
+    },
+    {
+      "mimeTypes": [
+        "JPG",
+        "GIF",
+        "PNG"
+      ],
+      "label": "Image_after_expansion",
+      "uniqueName": "Image_after_expansion",
+      "description": "upload creative after expansion",
+      "isRequired": true,
+      "variableType": "ASSET"
+    }
+  ],
+  "formatter": "\u003cscript src\u003d\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"\u003e\u003c/script\u003e\n\u003cstyle\u003e\n.container {\nposition: fixed;\nz-index: 999;\n}\n.container .btn {\nposition: absolute;\ntop: 15px;\nright: -32px;\ntransform: translate(-50%, -50%);\n-ms-transform: translate(-50%, -50%);\nbackground-color: [%button_background_color%];\ncolor: white;\nfont-size: 12px;\nborder: none;\ncursor: pointer;\ntext-align: center;\npadding: 5px 15px;\n}\n.container .btn:hover {\nbackground-color: black;\ncolor: white;\n}\n\nbutton::after {\n  content: \u0027\u0027;\n  width: 30px; height: 30px;\n  border-radius: 100%;\n  border: 6px solid [%RingColor%];\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  animation: ring 1.5s infinite;\n  animation-iteration-count: 3;\n  z-index: -1;\n  animation-fill-mode: forwards;\n}\n\n\n@keyframes ring {\n  0% {\n    width: 15px;\n    height: 15px;\n    opacity: 1;\n  }\n  100% {\n    width: 150px;\n    height: 150px;\n    opacity: 0;\n  }\n}\n  \n\u003c/style\u003e\n\n\n\n\u003cdiv class\u003d\"container\" id\u003d\"1\" style\u003d\"width:300px; height:250px;\"\u003e\n   \u003cbutton class\u003d\"btn\" id\u003d\"btnClick1\"\u003e[%Button_text%]\u003c/button\u003e\n   \u003ca href\u003d\"%%CLICK_URL_UNESC%%[%Clickthrough_url_300x250%]\" target\u003d\"_blank\"\u003e\n   \u003cimg src\u003d\"[%300x250_image%]\" alt\u003d\"Avatar\" style\u003d\"width:300px; height:250px;\"\u003e \n   \u003c/a\u003e\n\u003c/div\u003e\n\n\u003cdiv id\u003d\"2\" class\u003d\"container\" style\u003d\"display:none; width:[%Expanding_width%]px; height:[%Expanding_height%]px;\"\u003e\n\u003cbutton class\u003d\"btn\"  id\u003d\"btnClick2\"\u003eUn-expand\u003c/button\u003e\n\u003ca href\u003d\"%%CLICK_URL_UNESC%%[%Clickthrough_url_after_expansion%]\" target\u003d\"_blank\"\u003e\n\u003cimg src\u003d\"[%Image_after_expansion%]\" alt\u003d\"Avatar\" style\u003d\"width:[%Expanding_width%]px; height:[%Expanding_height%]px;\"\u003e\n\u003c/a\u003e\n\u003c/div\u003e\n\n\u003cscript\u003e\n$(\u0027#btnClick1\u0027).on(\u0027click\u0027,function(){\n$(\"#1\").css(\"display\", \"none\");\n$(\"#2\").css(\"display\", \"block\");\nwindow.parent.document.getElementById(window.name).style.cssText \u003d \"width: [%Expanding_width%]px; height:[%Expanding_height%]px; z-index:999;\";\n});\n\n$(\u0027#btnClick2\u0027).on(\u0027click\u0027,function(){\n$(\"#2\").css(\"display\", \"none\");\n$(\"#1\").css(\"display\", \"block\");\nwindow.parent.document.getElementById(window.name).style.cssText \u003d \"width: 300px; height: 250px;\";\n});\n\u003c/script\u003e\n",
+  "omidPartnerName": "",
+  "type": "USER_DEFINED",
+  "isInterstitial": false,
+  "isNativeEligible": false,
+  "isNativeVideoEligible": false,
+  "isSafeFrameCompatible": false
+}

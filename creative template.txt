@@ -1,0 +1,284 @@
+
+FULL PAGE INTERSTITIAL
+<style>
+    .interstialcss {
+        z-index: 999;
+        position: fixed;
+        width:100%;
+        text-align:center;
+    }
+
+</style>
+<div id='closebtn' class='interstialcss'>
+
+<p> Website will be load in few Seconds | Click here to go on the website <a href="#" onclick='change_css()'>Skip to Content</a> </p>
+<p style="background-color:grey; width:100%;" >Advertisment</p><a href="avatar.png" target="_blank">
+<img onload="timeFunction()" src="https://adranium.com/wp-content/uploads/2020/06/Thank-you-for-your-service-and-sacrifice-during-this-difficult-time..png"></a>
+<p>Copyright © 2020 Adranium.
+This site is best viewed with Internet Explorer 6.0 or higher; Firefox 2.0 or higher at a minimum screen resolution of 1024x768</p>
+</div>
+
+<script>
+window.parent.document.getElementById(window.name).style.cssText = "position: fixed; top: 0; left: 0; bottom: 0; width: 100%; height: 100%; background-color:rgba(255,255,255,1); margin: 0; z-index: 999;"; 
+</script>
+
+<script>
+    function change_css() {
+        document.getElementById('closebtn').style.cssText = 'display:none;';
+        window.parent.document.getElementById(window.name).style.cssText = "position: relative; width: 0px; height: 0px;";
+    }
+</script>
+
+<script>
+    function timeFunction() {
+        setTimeout(function() {
+        document.getElementById('closebtn').style.cssText = 'display:none;';
+        window.parent.document.getElementById(window.name).style.cssText = "position: relative; width: 0px; height: 0px;";
+           
+        }, 5000);
+    }
+</script>
+
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+ 728x90 Expandable
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+    .content {
+        padding: 0 18px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+        background-color: black;
+    }
+
+    .container {
+        position: fixed;
+    }
+
+    .container .btn {
+        position: absolute;
+        top: 45px;
+        right: -10px;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        background-color: black;
+        color: white;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        border-radius: 45px;
+        text-align: center;
+        padding: 15px 22px;
+    }
+  
+    .container .btn:hover {
+        background-color: red;
+    }
+  
+  button::after {
+  content: '';
+  width: 30px; height: 30px;
+  border-radius: 100%;
+  border: 6px solid #00FFCB;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ring 1.5s infinite;
+  animation-iteration-count: 3;
+  z-index: -1;
+  animation-fill-mode: forwards;
+}
+
+
+@keyframes ring {
+  0% {
+    width: 15px;
+    height: 15px;
+    opacity: 1;
+  }
+  100% {
+    width: 150px;
+    height: 150px;
+    opacity: 0;
+  }
+}
+ 
+</style>
+<div class="container" style="width:728px; height:90px;"> <img src="https://adranium.com/wp-content/uploads/2020/06/CORONAVIRUS.png" style="width:728px; height:90px;"><button class="btn" id="togle">Expand</button>
+
+    <div class="content"> <iframe width="728px" height="345px" src="https://www.youtube.com/embed/fPbYaTKKtmA"></iframe></div>
+</div>
+<script>
+    var coll = document.getElementsByClassName("btn");
+    var i;
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        });
+    }
+</script>
+<script>
+var action = 1;
+
+$("#togle").on("click", viewSomething);
+
+function viewSomething() {
+    if ( action == 1 ) {
+        window.parent.document.getElementById(window.name).style.cssText = "width: 750px; height: 500px;";
+        action = 2;
+    } else {
+        window.parent.document.getElementById(window.name).style.cssText = "width: 728px; height: 90px;";
+        action = 1;
+    }
+}
+</script>
+
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+300x250 Expanables
+
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+ <style>
+.container {
+position: fixed;
+z-index: 999;
+}
+.container .btn {
+position: absolute;
+top: 15px;
+right: -32px;
+transform: translate(-50%, -50%);
+-ms-transform: translate(-50%, -50%);
+background-color: red;
+color: white;
+font-size: 12px;
+border: none;
+cursor: pointer;
+text-align: center;
+padding: 5px 15px;
+}
+.container .btn:hover {
+background-color: black;
+}
+
+button::after {
+  content: '';
+  width: 30px; height: 30px;
+  border-radius: 100%;
+  border: 6px solid #00FFCB;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ring 1.5s infinite;
+  animation-iteration-count: 3;
+  z-index: -1;
+  animation-fill-mode: forwards;
+}
+
+
+@keyframes ring {
+  0% {
+    width: 15px;
+    height: 15px;
+    opacity: 1;
+  }
+  100% {
+    width: 150px;
+    height: 150px;
+    opacity: 0;
+  }
+}
+  
+</style>
+
+<div class="container" id="1" style="width:300px; height:250px;">
+   <button class="btn" id="btnClick1">Expandit</button>
+   <a href="https://www.google.com" target="_blank">
+   <img src="https://adranium.com/wp-content/uploads/2020/06/Blue-Plum-Pale-Yellow-Church-Large-Rectangle-IAB.png" alt="Avatar" style="width:300px; height:250px;"> 
+   </a>
+</div>
+
+<div id="2" class="container" style="display:none; width:320px; height:480px;">
+<button class="btn" id="btnClick2">Un-expand</button>
+<a href="https://www.google.com" target="_blank">
+<img src="https://adranium.com/wp-content/uploads/2020/06/Answers.png" alt="Avatar" style="width:320px; height:480px;">
+</a>
+</div>
+
+<script>
+$('#btnClick1').on('click',function(){
+$("#1").css("display", "none");
+$("#2").css("display", "block");
+window.parent.document.getElementById(window.name).style.cssText = "width: 320px; height: 480px; z-index:999;";
+});
+
+$('#btnClick2').on('click',function(){
+$("#2").css("display", "none");
+$("#1").css("display", "block");
+window.parent.document.getElementById(window.name).style.cssText = "width: 300px; height: 250px;";
+});
+</script>
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+Interstitial :-
+
+
+<style>
+    .interstialcss {
+        z-index: 999;
+        width: 320px;
+        height:480px;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .interstialcss .btn {
+        position: absolute;
+        top: 29px;
+        right: 0px;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        background-color: #555;
+        color: white;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        border-radius: 25px;
+        text-align: center;
+    }
+
+    .interstialcss .btn:hover {
+        background-color: red;
+    }
+</style>
+<div id='closebtn' class='interstialcss'>
+    <a href="https://www.google.com" target="_blank">
+  <img onload="timeFunction()" style="width: 320px; height:480px;" src="https://adranium.com/wp-content/uploads/2020/05/Untitled-design-1.png"></a><button class='btn' onclick='change_css()'>x</button></div>
+
+<script>
+    function change_css() {
+        document.getElementById('closebtn').style.cssText = 'display:none;';
+        window.parent.document.getElementById(window.name).style.cssText = "position: relative; width: 0px; height: 0px;";
+    }
+</script>
+
+<script>
+    function timeFunction() {
+        setTimeout(function() {
+            window.parent.document.getElementById(window.name).style.cssText = "position: fixed; top: 0; left: 0; bottom: 0; width: 100%; height: 100%; background-color:rgba(0,0,0,0.4); margin: 0; z-index: 999;";
+        }, 5000);
+    }
+</script>

@@ -1,0 +1,52 @@
+{
+  "name": "Interstitial ad with delay",
+  "description": "Interstitial ad with delay of 5 second. If you want to ad delay or remove the delay change the time function",
+  "variables": [
+    {
+      "defaultValue": 0,
+      "sampleValue": 0,
+      "label": "width",
+      "uniqueName": "width",
+      "description": "",
+      "isRequired": true,
+      "variableType": "LONG"
+    },
+    {
+      "defaultValue": 0,
+      "sampleValue": 0,
+      "label": "height",
+      "uniqueName": "height",
+      "description": "",
+      "isRequired": true,
+      "variableType": "LONG"
+    },
+    {
+      "mimeTypes": [
+        "JPG",
+        "PNG",
+        "GIF"
+      ],
+      "label": "Uploadcreative",
+      "uniqueName": "Uploadcreative",
+      "description": "",
+      "isRequired": true,
+      "variableType": "ASSET"
+    },
+    {
+      "isTrackingUrl": false,
+      "urlType": "STANDARD_HTTP",
+      "label": "ClickthroughURL",
+      "uniqueName": "ClickthroughURL",
+      "description": "",
+      "isRequired": true,
+      "variableType": "URL"
+    }
+  ],
+  "formatter": "\u003cstyle\u003e\n    .interstialcss {\n        z-index: 999;\n        width: [%width%]px;\n        height:[%height%]px;\n        position: fixed;\n        left: 50%;\n        top: 50%;\n        transform: translate(-50%, -50%);\n    }\n\n    .interstialcss .btn {\n        position: absolute;\n        top: 29px;\n        right: 0px;\n        transform: translate(-50%, -50%);\n        -ms-transform: translate(-50%, -50%);\n        background-color: #555;\n        color: white;\n        font-size: 16px;\n        border: none;\n        cursor: pointer;\n        border-radius: 25px;\n        text-align: center;\n    }\n\n    .interstialcss .btn:hover {\n        background-color: red;\n    }\n\u003c/style\u003e\n\u003cdiv id\u003d\u0027closebtn\u0027 class\u003d\u0027interstialcss\u0027\u003e\n    \u003ca href\u003d\"[%ClickthroughURL%]\" target\u003d\"_blank\"\u003e\n  \u003cimg onload\u003d\"timeFunction()\" style\u003d\"width: [%width%]px; height:[%height%]px;\" src\u003d\"%%CLICK_URL_UNESC%% [%Uploadcreative%]\"\u003e\u003c/a\u003e\u003cbutton class\u003d\u0027btn\u0027 onclick\u003d\u0027change_css()\u0027\u003ex\u003c/button\u003e\u003c/div\u003e\n\n\u003cscript\u003e\n    function change_css() {\n        document.getElementById(\u0027closebtn\u0027).style.cssText \u003d \u0027display:none;\u0027;\n        window.parent.document.getElementById(window.name).style.cssText \u003d \"position: relative; width: 0px; height: 0px;\";\n    }\n\u003c/script\u003e\n\n\u003cscript\u003e\n    function timeFunction() {\n        setTimeout(function() {\n            window.parent.document.getElementById(window.name).style.cssText \u003d \"position: fixed; top: 0; left: 0; bottom: 0; width: 100%; height: 100%; background-color:rgba(0,0,0,0.4); margin: 0; z-index: 999;\";\n        }, 5000);\n    }\n\u003c/script\u003e",
+  "omidPartnerName": "",
+  "type": "USER_DEFINED",
+  "isInterstitial": false,
+  "isNativeEligible": false,
+  "isNativeVideoEligible": false,
+  "isSafeFrameCompatible": false
+}
